@@ -31,21 +31,12 @@ article {
     margin: 20px;
 }
 
-video {
+.retrato, video {
     float: right;
     height: 400px;
     width: auto;
     margin-right: 20px;
-    border-color: rgb(1, 21, 78);
-    border-style: double;
-    border-width: 4px;
-}
-
-.retrato {
-    float: right;
-    height: 400px;
-    width: auto;
-    margin-right: 20px;
+    margin-bottom: 20px;
     border-color: rgb(1, 21, 78);
     border-style: double;
     border-width: 4px;
