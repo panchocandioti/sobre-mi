@@ -31,10 +31,10 @@ article {
     margin: 20px;
 }
 
-.retrato {
+.retrato, video {
     float: right;
-    width: 15%;
-    height: auto;
+    width: auto;
+    height: 400px;
     margin-right: 20px;
     border-color: rgb(1, 21, 78);
     border-style: double;
