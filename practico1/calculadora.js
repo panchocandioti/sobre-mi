@@ -41,10 +41,24 @@ function checkValues() {
         inputoperando2 = parseFloat(inputoperando2);
         resultado = calcularResultado(selectoperacion, inputoperando1, inputoperando2);
     }
-    
-    //Ante resultados con muchos dígitos avisa que se podría utilizar notación científica
-    if (resultado > Math.pow(10, 12) || resultado < Math.pow(10, -12)) {
-        alert("Números con elevada cantidad de dígitos podrían mostrarse en notación científica");
+
+    //Función anidada que cuenta dígitos decimales del resultado
+    function contarDigitosDecimales(resultado) {
+        let numeroComoTexto = resultado.toString();
+        let partes = numeroComoTexto.split('.');
+
+        if (partes.length === 2) {
+            return partes[1].length;
+        }
+        return 0; //Si no hay decimales
+    }
+
+    let cantidadDigitosDecimales = contarDigitosDecimales(resultado);
+
+    //Ante resultados con muchos dígitos avisa
+    //que se podría utilizar notación científica
+    if (resultado > Math.pow(10, 12) || cantidadDigitosDecimales > 12) {
+        alert("Números con muchos dígitos podrían mostrarse en notación científica");
     }
 
     //Escribe el resultado en la calculadora
