@@ -1,0 +1,59 @@
+header {
+    margin: 0;
+    padding: 10px;
+    color: white;
+    background-color: rgb(96, 131, 96);
+}
+
+body {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: rgb(96, 131, 96);
+    margin: 0;
+}
+
+form {
+    background-color: rgb(189, 236, 189);
+    font-weight: 500;
+    padding: 15px;
+    font-size: small;
+    width: 400px;
+    margin: auto;
+}
+
+input,
+select {
+    width: 200px;
+    text-align: center;
+}
+
+input:hover {
+    border: rgb(96, 131, 96) solid 2px;
+}
+
+div {
+    padding: 8px;
+}
+
+button {
+    margin: 5px;
+    padding: 10px;
+    color: white;
+    background-color: rgb(96, 131, 96);
+    font-weight: 600;
+}
+
+button:hover {
+    background-color: rgb(41, 60, 41);
+}
+
+.mensaje {
+    color: white;
+}
+
+#mensaje2 {
+    margin: -5px;
+    color: yellow;
+    font-size: 45px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}

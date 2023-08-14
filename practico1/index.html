@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora simple</title>
+    <link rel="stylesheet" href="estiloscalculadora.css">
+</head>
+
+<body>
+    <header>
+        <h1>Calculadora simple</h1>
+        <p>Operar dos números entre sí en el orden ingresado</p>
+    </header>
+
+    <form>
+
+        <label for="operando1">Primer número</label>
+        <div>
+            <input id="operando1" name="operando1" placeholder="Ingresar número" required>
+        </div>
+        <br>
+
+        <label>Operación</label>
+        <div>
+            <select id="operacion" name="operacion">
+                <option value="seleccionar" disabled selected>Seleccione una operación</option>
+                <option value="suma">Sumarle</option>
+                <option value="resta">Restarle</option>
+                <option value="multiplicacion">Multiplicarlo por</option>
+                <option value="division">Dividirlo por</option>
+            </select>
+        </div>
+        <br>
+
+        <label for="operando2">Segundo número</label>
+        <div>
+            <input id="operando2" name="operando2" placeholder="Ingresar número" required>
+        </div>
+        <br>
+
+        <button id="calcular" type="button">CALCULAR</button>
+        <script src="./calculadora.js"></script>
+
+        <button id="reset">RESET</button>
+
+
+    </form>
+
+    <div>
+        <p id="mensaje1" class="mensaje" type="text"></p>
+        <p id="mensaje2" class="mensaje" type="text"></p>
+    </div>
+</body>
+
+</html>
