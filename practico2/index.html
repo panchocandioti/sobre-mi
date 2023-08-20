@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piedra, Papel, Tijeras</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Piedra, Papel, Tijeras!</h1>
+        
+    </header>
+
+    <section id="descripcion">
+        <p>Jugá contra la computadora</p>
+        <p>Gana el primero en llegar a 3 victorias</p>
+    </section>
+
+    <section>
+        <form id="formulario">
+            <label for="nombre">Ingresá tu nombre para jugar: </label>
+            <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+            <button id="jugar" type="button">JUGAR</button>
+        </form>
+    </section>
+
+    <script src="piedraPapelTijeras.js"></script>
+
+    <div id="contenedor-imagenes">
+        <img src="gamemultimedia/rock.jpg" alt="Piedra" id="piedra">
+        <img src="gamemultimedia/paper.jpg" alt="Papel" id="papel">
+        <img src="gamemultimedia/scissors.jpg" alt="Tijeras" id="tijeras">
+    </div>
+    
+</body>
+
+</html>
