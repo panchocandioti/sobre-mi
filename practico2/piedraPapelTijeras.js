@@ -86,23 +86,34 @@ let terminar = false;
 function jugarPartido() {
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
-    if (puntosComputadora === 3 || puntosUsuario === 3) {
-        tanteadorFinal();
-    } else if (resultado === "Gana la compu") {
+    if (nombre === undefined) {
+        alert("Por favor, ingresá un nombre")
+        limpiarYRecargar();
+    }
+    if (resultado === "Gana la compu") {
         puntosComputadora += 1
     } else if (resultado === "Gana " + nombre) {
         puntosUsuario += 1
     }
     document.getElementById("descripcion").innerHTML = resultado;
     document.getElementById("formulario").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
+    if (puntosComputadora >= 3 || puntosUsuario >= 3) {
+        tanteadorFinal();
+    }
 }
 
 function tanteadorFinal() {
-let resultadoPartido;
-if (puntosComputadora > puntosUsuario) {
-    resultadoPartido = "Gana la computadora, lo siento, " + nombre;
-} else {
-    resultadoPartido = "Ganaste, " + nombre + "!";
+    let resultadoPartido;
+    if (puntosComputadora > puntosUsuario) {
+        resultadoPartido = "LA COMPU GANA EL PARTIDO, LO SIENTO " + nombre + "...";
+    } else {
+        resultadoPartido = "GANASTE EL PARTIDO, " + nombre + "!";
+    }
+    document.getElementById("descripcion").innerHTML = resultadoPartido;
 }
-document.getElementById("descripcion").innerHTML = resultadoPartido;
+
+//Función para limpiar el formulario y recargar la página
+function limpiarYRecargar() {
+    document.getElementById("formulario").reset();
+    location.reload();
 }
