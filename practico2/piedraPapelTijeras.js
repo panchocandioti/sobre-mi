@@ -17,7 +17,8 @@ function checkValues() {
     }
     //Reemplaza los encabezados del juego para empezar a jugar
     if (validacion) {
-        document.getElementById("descripcion").innerHTML = "¡A jugar, " + nombre + ", elegí una opción!";
+        document.getElementById("descripcion1").innerHTML = "¡A jugar, " + nombre + "!";
+        document.getElementById("descripcion2").innerHTML = "Elegí una opción:";
         document.getElementById("formulario").innerHTML = "";
         return nombre
     }
@@ -114,8 +115,9 @@ function jugarPartido() {
         audionovalido.play();
 
     }
-    document.getElementById("descripcion").innerHTML = resultado;
-    document.getElementById("formulario").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
+    document.getElementById("descripcion1").innerHTML = resultado;
+    document.getElementById("descripcion2").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
+    document.getElementById("formulario").innerHTML = ""
     if (puntosComputadora >= 3 || puntosUsuario >= 3) {
         setTimeout(tanteadorFinal, 1500);
     }
@@ -135,7 +137,7 @@ function tanteadorFinal() {
         audiovictory.src = "gamemultimedia/victory.mp3";
         audiovictory.play();
     }
-    document.getElementById("descripcion").innerHTML = resultadoPartido;
+    document.getElementById("descripcion1").innerHTML = resultadoPartido;
     desactivarOnclick();
 }
 
