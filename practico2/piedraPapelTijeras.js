@@ -87,8 +87,8 @@ function jugarPartido() {
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
 
-    document.getElementById("rondausuario").innerHTML = jugadaUsuario;
-    document.getElementById("rondacomputadora").innerHTML = jugadaComputadora
+    document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
+    document.getElementById("rondacomputadora").innerHTML = "Compu: " + jugadaComputadora
 
     if (nombre === undefined || nombre === "") {
         alert("Por favor, ingresá un nombre")

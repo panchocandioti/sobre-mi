@@ -2,7 +2,7 @@ header {
     color: rgb(249, 249, 43);
     font-size: x-large;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    margin: 2%
+    margin: 0;
 }
 
 body {
@@ -10,12 +10,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
     background-color: rgb(29, 29, 29);
+    font-size: larger;
 }
 
 form {
-    padding: 2%;
+    padding: 0.5%;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center;
 }
 
@@ -39,6 +41,8 @@ img:hover {
 input {
     text-align: center;
     margin: 10px;
+    width: 250px;
+    font-size: medium;
 }
 
 input:hover {
@@ -55,4 +59,13 @@ input:hover {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: xx-large;
     color:rgb(249, 249, 43);
+}
+
+#rondacomputadora {
+    color: orange;
+}
+
+button {
+    width: 250px;
+    font-size: medium;
 }
