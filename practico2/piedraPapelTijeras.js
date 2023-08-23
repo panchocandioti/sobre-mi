@@ -28,7 +28,7 @@ const piedra = "piedra";
 const papel = "papel";
 const tijeras = "tijeras";
 
-//Obtención de la jugada del usuario según el click
+//Funciones para obtención de la jugada del usuario según el click
 let jugadaUsuario;
 
 function jugadaPiedra() {
@@ -78,7 +78,7 @@ function determinarGanador(jugadaComputadora, jugadaUsuario) {
     return resultado;
 }
 
-//Jugar partido con tanteador
+//Jugar partido con tanteador y mostrando jugadas
 let puntosComputadora = 0;
 let puntosUsuario = 0;
 let terminar = false;
@@ -86,34 +86,71 @@ let terminar = false;
 function jugarPartido() {
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
-    if (nombre === undefined) {
+
+    document.getElementById("rondausuario").innerHTML = jugadaUsuario;
+    document.getElementById("rondacomputadora").innerHTML = jugadaComputadora
+
+    if (nombre === undefined || nombre === "") {
         alert("Por favor, ingresá un nombre")
         limpiarYRecargar();
     }
+
+    //Resultado de la ronda con sonidos
     if (resultado === "Gana la compu") {
-        puntosComputadora += 1
+        puntosComputadora += 1;
+        let audioabucheo = document.getElementById("abucheo");
+        audioabucheo.src = "gamemultimedia/abucheo.mp3";
+        audioabucheo.play();
+
     } else if (resultado === "Gana " + nombre) {
-        puntosUsuario += 1
+        puntosUsuario += 1;
+        let audiofestejo = document.getElementById("festejo");
+        audiofestejo.src = "gamemultimedia/festejo.mp3";
+        audiofestejo.play();
+
+    }else if (resultado === "Empate") {
+        let audionovalido = document.getElementById("novalido");
+        audionovalido.src = "gamemultimedia/novalido.mp3";
+        audionovalido.play();
+
     }
     document.getElementById("descripcion").innerHTML = resultado;
     document.getElementById("formulario").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
     if (puntosComputadora >= 3 || puntosUsuario >= 3) {
-        tanteadorFinal();
+        setTimeout(tanteadorFinal, 1500);
     }
 }
 
+//Función que muestra el resultado final del partido con sonidos
 function tanteadorFinal() {
     let resultadoPartido;
     if (puntosComputadora > puntosUsuario) {
-        resultadoPartido = "LA COMPU GANA EL PARTIDO, LO SIENTO " + nombre + "...";
+        resultadoPartido = "LA COMPU GANA EL PARTIDO, LO SIENTO, " + nombre + "...";
+        let audioderrota = document.getElementById("derrota");
+        audioderrota.src = "gamemultimedia/derrota.mp3";
+        audioderrota.play();
     } else {
-        resultadoPartido = "GANASTE EL PARTIDO, " + nombre + "!";
+        resultadoPartido = "¡GANASTE EL PARTIDO, " + nombre + "!";
+        let audiovictory = document.getElementById("victory");
+        audiovictory.src = "gamemultimedia/victory.mp3";
+        audiovictory.play();
     }
     document.getElementById("descripcion").innerHTML = resultadoPartido;
+    desactivarOnclick();
 }
 
 //Función para limpiar el formulario y recargar la página
 function limpiarYRecargar() {
     document.getElementById("formulario").reset();
     location.reload();
+}
+
+//Función para desactivar onclick una vez terminado el partido
+function desactivarOnclick() {
+    let jugadaPiedra = document.getElementById("piedra");
+    jugadaPiedra.onclick = null;
+    let jugadaPapel = document.getElementById("papel");
+    jugadaPapel.onclick = null;
+    let jugadaTijeras = document.getElementById("tijeras");
+    jugadaTijeras.onclick = null;
 }

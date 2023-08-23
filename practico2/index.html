@@ -35,7 +35,18 @@
         <img src="gamemultimedia/scissors.jpg" alt="Tijeras" id="tijeras" onclick="jugadaTijeras()">
     </div>
 
-    <button id="reset" onclick="limpiarYRecargar()">RESET</button>
+    <div id="ronda" class="ronda">
+        <div id="rondausuario" class="ronda"></div>
+        <div id="rondacomputadora" class="ronda"></div>
+    </div>
+
+    <audio id="abucheo" src="./gamemultimedia/abucheo.mp3"></audio>
+    <audio id="festejo" src="./gamemultimedia/festejo.mp3"></audio>
+    <audio id="novalido" src="./gamemultimedia/novalido.mp3"></audio>
+    <audio id="derrota" src="./gamemultimedia/derrota.mp3"></audio>
+    <audio id="victory" src="./gamemultimedia/victory.mp3"></audio>
+
+    <button id="reset" onclick="limpiarYRecargar()">VOLVER A EMPEZAR | LIMPIAR</button>
     
 </body>
 

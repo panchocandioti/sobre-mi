@@ -14,6 +14,9 @@ body {
 
 form {
     padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 img {
@@ -23,12 +26,33 @@ img {
 
 img:hover {
     border: 2px solid rgb(249, 249, 43);
+    cursor: pointer;
 }
 
-.contenedor-imagenes {
-    border: 1px solid antiquewhite;
+#contenedor-imagenes {
     display: flex;
     flex-direction: row;
-    align-items: center;
+    justify-content: center;
+    margin: 1%
+}
+
+input {
+    text-align: center;
+    margin: 10px;
+}
+
+input:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+#ronda {
+    display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
+    margin: 2%;
+    padding: 15px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: xx-large;
+    color:rgb(249, 249, 43);
 }
