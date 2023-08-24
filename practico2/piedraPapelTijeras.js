@@ -7,6 +7,7 @@ let nombre;
 
 function checkValues() {
     nombre = document.getElementById("nombre").value;
+    nombre = nombre.toUpperCase();
     let formatonombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     let validacion = true;
 
@@ -89,7 +90,7 @@ function jugarPartido() {
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
 
     document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
-    document.getElementById("rondacomputadora").innerHTML = "Compu: " + jugadaComputadora
+    document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora
 
     if (nombre === undefined || nombre === "") {
         alert("Por favor, ingresá un nombre")
