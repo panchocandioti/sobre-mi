@@ -89,16 +89,16 @@ function jugarPartido() {
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
 
-    document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
-    document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora
-
     if (nombre === undefined || nombre === "") {
         alert("Por favor, ingresá un nombre")
         limpiarYRecargar();
+    } else {
+        document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
+        document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora;
     }
-
+    
     //Resultado de la ronda con sonidos
-    else if (resultado === "Gana la compu") {
+    if (resultado === "Gana la compu") {
         puntosComputadora += 1;
         let audioabucheo = document.getElementById("abucheo");
         audioabucheo.src = "gamemultimedia/abucheo.mp3";
@@ -110,7 +110,7 @@ function jugarPartido() {
         audiofestejo.src = "gamemultimedia/festejo.mp3";
         audiofestejo.play();
 
-    }else if (resultado === "Empate") {
+    } else if (resultado === "Empate") {
         let audionovalido = document.getElementById("novalido");
         audionovalido.src = "gamemultimedia/novalido.mp3";
         audionovalido.play();
