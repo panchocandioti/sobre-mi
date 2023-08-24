@@ -98,7 +98,7 @@ function jugarPartido() {
     }
 
     //Resultado de la ronda con sonidos
-    if (resultado === "Gana la compu") {
+    else if (resultado === "Gana la compu") {
         puntosComputadora += 1;
         let audioabucheo = document.getElementById("abucheo");
         audioabucheo.src = "gamemultimedia/abucheo.mp3";
