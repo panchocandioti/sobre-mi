@@ -47,7 +47,7 @@ input {
     font-size: medium;
 }
 
-input:hover {
+input:hover, button:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
