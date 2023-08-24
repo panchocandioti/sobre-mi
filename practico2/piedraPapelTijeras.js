@@ -83,7 +83,6 @@ function determinarGanador(jugadaComputadora, jugadaUsuario) {
 //Jugar partido con tanteador y mostrando jugadas
 let puntosComputadora = 0;
 let puntosUsuario = 0;
-let terminar = false;
 
 function jugarPartido() {
     let jugadaComputadora = obtenerJugadaComputadora();
@@ -96,7 +95,7 @@ function jugarPartido() {
         document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
         document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora;
     }
-    
+
     //Resultado de la ronda con sonidos
     if (resultado === "Gana la compu") {
         puntosComputadora += 1;
