@@ -85,18 +85,23 @@ let puntosComputadora = 0;
 let puntosUsuario = 0;
 
 function jugarPartido() {
-    let jugadaComputadora = obtenerJugadaComputadora();
-    let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
 
+//Si se presiona piedra, papel o tijeras sin haber puesto el nombre no juega
     if (nombre === undefined || nombre === "") {
         alert("Por favor, ingresá un nombre")
         limpiarYRecargar();
-    } else {
-        document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
-        document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora;
+        return
     }
 
-    //Resultado de la ronda con sonidos
+//Resultado de la ronda
+    let jugadaComputadora = obtenerJugadaComputadora();
+    let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
+
+    //Muestra jugada elegida por usuario y computadora
+    document.getElementById("rondausuario").innerHTML = nombre + ": " + jugadaUsuario;
+    document.getElementById("rondacomputadora").innerHTML = "COMPU: " + jugadaComputadora;
+
+    //Sonidos para cada resultado de ronda
     if (resultado === "Gana la compu") {
         puntosComputadora += 1;
         let audioabucheo = document.getElementById("abucheo");
@@ -113,8 +118,9 @@ function jugarPartido() {
         let audionovalido = document.getElementById("novalido");
         audionovalido.src = "gamemultimedia/novalido.mp3";
         audionovalido.play();
-
     }
+    
+    //Muestra el resultado de la ronda y el tanteador parcial
     document.getElementById("descripcion1").innerHTML = resultado;
     document.getElementById("descripcion2").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
     document.getElementById("formulario").innerHTML = ""
