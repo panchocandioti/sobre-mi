@@ -11,43 +11,43 @@
 <body>
     <header>
         <h1>¡Piedra, papel, tijeras!</h1>
-        
+
     </header>
+    <div id="fondo" class="fondo">
+        <section id="descripcion">
+            <p id="descripcion1">Jugá contra la computadora</p>
+            <p id="descripcion2">El vencedor será el primero en ganar 3 rondas</p>
+        </section>
 
-    <section id="descripcion">
-        <p id="descripcion1">Jugá contra la computadora</p>
-        <p id="descripcion2">El vencedor será el primero en ganar 3 rondas</p>
-    </section>
+        <section>
+            <form id="formulario">
+                <label for="nombre">Ingresá tu nombre para jugar: </label>
+                <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
+                <button id="jugar" type="button">JUGAR</button>
+            </form>
+        </section>
 
-    <section>
-        <form id="formulario">
-            <label for="nombre">Ingresá tu nombre para jugar: </label>
-            <input id="nombre" name="nombre" type="text" placeholder="Nombre" required>
-            <button id="jugar" type="button">JUGAR</button>
-        </form>
-    </section>
+        <script src="piedraPapelTijeras.js"></script>
 
-    <script src="piedraPapelTijeras.js"></script>
+        <div id="contenedor-imagenes">
+            <img src="gamemultimedia/rock.jpg" alt="Piedra" id="piedra" onclick="jugadaPiedra()">
+            <img src="gamemultimedia/paper.jpg" alt="Papel" id="papel" onclick="jugadaPapel()">
+            <img src="gamemultimedia/scissors.jpg" alt="Tijeras" id="tijeras" onclick="jugadaTijeras()">
+        </div>
 
-    <div id="contenedor-imagenes">
-        <img src="gamemultimedia/rock.jpg" alt="Piedra" id="piedra" onclick="jugadaPiedra()">
-        <img src="gamemultimedia/paper.jpg" alt="Papel" id="papel" onclick="jugadaPapel()">
-        <img src="gamemultimedia/scissors.jpg" alt="Tijeras" id="tijeras" onclick="jugadaTijeras()">
+        <div id="ronda" class="ronda">
+            <div id="rondausuario" class="ronda"></div>
+            <div id="rondacomputadora" class="ronda"></div>
+        </div>
+
+        <audio id="abucheo" src="./gamemultimedia/abucheo.mp3"></audio>
+        <audio id="festejo" src="./gamemultimedia/festejo.mp3"></audio>
+        <audio id="novalido" src="./gamemultimedia/novalido.mp3"></audio>
+        <audio id="derrota" src="./gamemultimedia/derrota.mp3"></audio>
+        <audio id="victory" src="./gamemultimedia/victory.mp3"></audio>
+
+        <button id="reset" onclick="limpiarYRecargar()">VOLVER A EMPEZAR | LIMPIAR</button>
     </div>
-
-    <div id="ronda" class="ronda">
-        <div id="rondausuario" class="ronda"></div>
-        <div id="rondacomputadora" class="ronda"></div>
-    </div>
-
-    <audio id="abucheo" src="./gamemultimedia/abucheo.mp3"></audio>
-    <audio id="festejo" src="./gamemultimedia/festejo.mp3"></audio>
-    <audio id="novalido" src="./gamemultimedia/novalido.mp3"></audio>
-    <audio id="derrota" src="./gamemultimedia/derrota.mp3"></audio>
-    <audio id="victory" src="./gamemultimedia/victory.mp3"></audio>
-
-    <button id="reset" onclick="limpiarYRecargar()">VOLVER A EMPEZAR | LIMPIAR</button>
-    
 </body>
 
 </html>

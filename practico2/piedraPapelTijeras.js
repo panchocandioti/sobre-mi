@@ -4,11 +4,11 @@ botonjugar.addEventListener("click", checkValues);
 
 //Función para validar el ingreso del nombre
 let nombre;
+let formatonombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
 function checkValues() {
     nombre = document.getElementById("nombre").value;
     nombre = nombre.toUpperCase();
-    let formatonombre = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
     let validacion = true;
 
     //Mensaje de alerta si no se ingresa un nombre válido o está vacío
@@ -86,14 +86,14 @@ let puntosUsuario = 0;
 
 function jugarPartido() {
 
-//Si se presiona piedra, papel o tijeras sin haber puesto el nombre no juega
-    if (nombre === undefined || nombre === "") {
+    //Si se presiona piedra, papel o tijeras sin haber puesto el nombre no juega
+    if (nombre === undefined || nombre === "" || !formatonombre.test(nombre)) {
         alert("Por favor, ingresá un nombre");
         limpiarYRecargar();
         return;
     }
 
-//Resultado de la ronda
+    //Resultado de la ronda
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
 
@@ -119,32 +119,35 @@ function jugarPartido() {
         audionovalido.src = "gamemultimedia/novalido.mp3";
         audionovalido.play();
     }
-    
+
     //Muestra el resultado de la ronda y el tanteador parcial
     document.getElementById("descripcion1").innerHTML = resultado;
     document.getElementById("descripcion2").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
     document.getElementById("formulario").innerHTML = ""
     if (puntosComputadora >= 3 || puntosUsuario >= 3) {
-        setTimeout(tanteadorFinal, 1500);
+        desactivarOnclick();
+        setTimeout(tanteadorFinal, 1250);
     }
 }
 
 //Función que muestra el resultado final del partido con sonidos
 function tanteadorFinal() {
     let resultadoPartido;
+    let fondo = document.getElementById("fondo");
     if (puntosComputadora > puntosUsuario) {
         resultadoPartido = "LA COMPU GANA EL PARTIDO, LO SIENTO, " + nombre + "...";
         let audioderrota = document.getElementById("derrota");
         audioderrota.src = "gamemultimedia/derrota.mp3";
         audioderrota.play();
+        fondo.style.backgroundImage = "url(gamemultimedia/gameover.gif)";
     } else {
         resultadoPartido = "¡GANASTE EL PARTIDO, " + nombre + "!";
         let audiovictory = document.getElementById("victory");
         audiovictory.src = "gamemultimedia/victory.mp3";
         audiovictory.play();
+        fondo.style.backgroundImage = "url(gamemultimedia/confetti2.gif)";
     }
     document.getElementById("descripcion1").innerHTML = resultadoPartido;
-    desactivarOnclick();
 }
 
 //Función para limpiar el formulario y recargar la página
