@@ -93,6 +93,9 @@ function jugarPartido() {
         return;
     }
 
+    //Oculta el botón de reset para no confundir al jugador
+    ocultarBotonReset();
+
     //Resultado de la ronda
     let jugadaComputadora = obtenerJugadaComputadora();
     let resultado = determinarGanador(jugadaComputadora, jugadaUsuario);
@@ -130,7 +133,7 @@ function jugarPartido() {
     }
 }
 
-//Función que muestra el resultado final del partido con sonidos
+//Función que muestra el resultado final del partido con sonidos + GIF + mostrar el botón reset de nuevo
 function tanteadorFinal() {
     let resultadoPartido;
     let fondo = document.getElementById("fondo");
@@ -148,6 +151,7 @@ function tanteadorFinal() {
         fondo.style.backgroundImage = "url(gamemultimedia/confetti2.gif)";
     }
     document.getElementById("descripcion1").innerHTML = resultadoPartido;
+    mostrarBotonReset();
 }
 
 //Función para limpiar el formulario y recargar la página
@@ -164,4 +168,16 @@ function desactivarOnclick() {
     jugadaPapel.onclick = null;
     let jugadaTijeras = document.getElementById("tijeras");
     jugadaTijeras.onclick = null;
+}
+
+//Función para ocultar el botón de reset
+function ocultarBotonReset() {
+    let botonreset = document.getElementById("reset");
+    botonreset.style.display = "none";
+}
+
+//Función para mostrar el botón de reset
+function mostrarBotonReset() {
+let botonreset = document.getElementById("reset");
+botonreset.style.display = "block";
 }

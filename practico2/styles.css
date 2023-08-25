@@ -76,3 +76,8 @@ button {
     width: 260px;
     font-size: medium;
 }
+
+#contienereset {
+    display: flex;
+    justify-content: center;
+}
