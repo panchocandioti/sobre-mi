@@ -88,9 +88,9 @@ function jugarPartido() {
 
 //Si se presiona piedra, papel o tijeras sin haber puesto el nombre no juega
     if (nombre === undefined || nombre === "") {
-        alert("Por favor, ingresá un nombre")
+        alert("Por favor, ingresá un nombre");
         limpiarYRecargar();
-        return
+        return;
     }
 
 //Resultado de la ronda
