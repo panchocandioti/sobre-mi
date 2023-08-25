@@ -125,7 +125,7 @@ function jugarPartido() {
 
     //Muestra el resultado de la ronda y el tanteador parcial
     document.getElementById("descripcion1").innerHTML = resultado;
-    document.getElementById("descripcion2").innerHTML = nombre + ": " + puntosUsuario + "  |  Computadora: " + puntosComputadora;
+    document.getElementById("descripcion2").innerHTML = nombre + ": " + puntosUsuario + "   |   COMPU: " + puntosComputadora;
     document.getElementById("formulario").innerHTML = ""
     if (puntosComputadora >= 3 || puntosUsuario >= 3) {
         desactivarOnclick();
