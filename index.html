@@ -9,60 +9,66 @@
 </head>
 
 <!-- Aquí comienza el body -->
+
 <body>
     <header>
         <h1>Información del alumno</h1>
     </header>
-<!-- En la sección de navegación coloqué enlaces a mi perfil de Linkedin,
+    <!-- En la sección de navegación coloqué enlaces a mi perfil de Linkedin,
     mi perfil de Fontagro y la página de Curriculum Vitae que hicimos como extra-->
-    <nav>
-        <a href="https://www.linkedin.com/in/francisco-candioti-0b167834/">Linkedin profile</a>
-        <a href="https://www.fontagro.org/new/investigadores/ver/362/francisco-candioti/es">Fontagro profile</a>
-        <a href="curriculumvitae/index2.html">CV Resumido</a>
-        <a href="practico1/index.html">Calculadora</a>
-        <a href="practico2/index.html">Piedra, Papel, Tijeras</a>
+    <nav id="barra-navegacion">
+        <div class="nav"><a href="https://www.linkedin.com/in/francisco-candioti-0b167834/">Linkedin profile</a></div>
+        <div class="nav"><a href="https://www.fontagro.org/new/investigadores/ver/362/francisco-candioti/es">Fontagro
+                profile</a></div>
+        <div class="nav"><a href="curriculumvitae/index2.html">CV Resumido</a></div>
+        <div class="nav"><a href="practico1/index.html">Calculadora</a></div>
+        <div class="nav"><a href="practico2/index.html">Piedra, Papel, Tijeras</a></div>
     </nav>
 
     <main>
         <!-- Aquí se insertan video y fotografía -->
-        <section>
-            <video controls>
-            <source src="multimedia/video.mp4" type="video/mp4">
-        </section>
-        
-        <img src="multimedia/Francisco Candioti.jpg" alt="Francisco Candioti" class="retrato" title="Francisco Candioti">
-
+        <div class="contenedor">
+            <section>
+                <video controls>
+                    <source src="multimedia/video.mp4" type="video/mp4">
+            </section>
+        </div>
+        <div class="contenedor">
+            <img src="multimedia/Francisco Candioti.jpg" alt="Francisco Candioti" class="retrato"
+                title="Francisco Candioti">
+        </div>
         <!-- Aquí comienzan las listas de datos básicos, intereses y experiencias -->
-        <article id="datos-basicos">
-            <h2>Datos básicos</h2>
-            <ul>
-                <li><strong>Nombre:</strong> Francisco Candioti</li>
-                <li><strong>Edad:</strong> 51 años</li>
-                <li><strong>Ciudad:</strong> San Carlos Centro (SF)</li>
-                <li><strong>País:</strong> Argentina</li>
-            </ul>
-        </article>
+        <div class="contenedor">
+            <article id="datos-basicos">
+                <h2>Datos básicos</h2>
+                <ul>
+                    <li><strong>Nombre:</strong> Francisco Candioti</li>
+                    <li><strong>Edad:</strong> 51 años</li>
+                    <li><strong>Ciudad:</strong> San Carlos Centro (SF)</li>
+                    <li><strong>País:</strong> Argentina</li>
+                </ul>
+            </article>
 
-        <article id="intereses">
-            <h2>Intereses</h2>
-            <ul>
-                <li>Agronomía</li>
-                <li>Programación</li>
-                <li>Música</li>
-                <li>Viajar</li>
-            </ul>
-        </article>
+            <article id="intereses">
+                <h2>Intereses</h2>
+                <ul>
+                    <li>Agronomía</li>
+                    <li>Programación</li>
+                    <li>Música</li>
+                    <li>Viajar</li>
+                </ul>
+            </article>
 
-        <article id="experiencias">
-            <h2>Experiencias</h2>
-            <ul>
-                <li>Asesor de empresas y organizaciones del sector agropecuario</li>
-                <li>Producción agropecuaria con especialización en lechería</li>
-                <li>Docente universitario de grado y posgrado</li>
-                <li>Desarrollador de herramientas para toma de decisiones en empresas lecheras</li>
-            </ul>
-        </article>
-        
+            <article id="experiencias">
+                <h2>Experiencias</h2>
+                <ul>
+                    <li>Asesor de empresas y organizaciones del sector agropecuario</li>
+                    <li>Producción agropecuaria con especialización en lechería</li>
+                    <li>Docente universitario de grado y posgrado</li>
+                    <li>Desarrollador de herramientas para toma de decisiones en empresas lecheras</li>
+                </ul>
+            </article>
+        </div>
     </main>
 </body>
 
