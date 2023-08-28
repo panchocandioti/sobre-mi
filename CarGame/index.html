@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El juego del Autito</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>El juego del Autito</h1>
+
+    <div id="canvas">
+        <canvas id="board"></canvas>
+    </div>
+   
+
+    <div id="contenedor" class="contenedor">
+        <div class="tablero">
+            <p id="nivel">Nivel:</p>
+        </div>
+
+        <div class="tablero">
+            <p id="vuelta">Vuelta:</p>
+        </div>
+
+        <div class="tablero">
+            <p id="sentido">Giro:  </p>
+            <img id="sentidogiro" src="./multimedia/sentidogiro.png">
+        </div>
+
+        <div class="tablero">
+            <p id="vidas">Vidas:</p>
+        </div>
+
+        <div class="tablero">
+            <p id="puntos">Puntos: 0</p>
+        </div>
+
+    </div>
+
+    <p id="instrucciones">Controles: flechitas del teclado | 3 vueltas para pasar de nivel | Cada nivel incrementa velocidad y dificultad | 3 niveles completos para ganar | 3 Vidas</p>
+
+    
+
+    <audio id="festejo" src="./multimedia/festejo.mp3"></audio>
+    <audio id="novalido" src="./multimedia/novalido.mp3"></audio>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
