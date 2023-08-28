@@ -177,7 +177,9 @@ function isLap() {
 		document.getElementById("canvas").innerHTML = "Puntaje final: " + puntos;
 		document.getElementById("instrucciones").innerHTML = "El puntaje final contempla vidas perdidas, nivel alcanzado y recorrido logrado en dicho nivel";
 		gameOver = true;
-		alert("¡GANASTE! ¡CAMPEÓN!");
+		setTimeout(function() {
+			alert("¡GANASTE! ¡CAMPEÓN!");
+		  }, 300);
 	}
 }
 
@@ -191,12 +193,16 @@ function pierdeVida() {
 
 	if (vidas <= 0) {
 		gameOver = true;
-		alert("¡Game Over!")
+		setTimeout(function() {
+			alert("¡Game Over!");
+		  }, 1500);
 	} else {
 		carX = 0;
 		carY = 0;
 		speedX = 0;
 		speedY = 1;
-		alert("¡Perdiste una vida!");
+		setTimeout(function() {
+			alert("¡Perdiste una vida!");
+		  }, 300);
 	}
 }
